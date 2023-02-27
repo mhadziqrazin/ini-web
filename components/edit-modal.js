@@ -39,10 +39,6 @@ export default function EditModal({ visible, onClose, tweet, id }) {
     const docRef = doc(db, 'posts', id)
     const updatedDoc = { ...post, timestamp: serverTimestamp() }
     await updateDoc(docRef, updatedDoc)
-    toast.success("Thoughts edited!", {
-      position: toast.POSITION.TOP_CENTER,
-      autoClose: 2000
-    })
     setLoading(false)
     onClose()
   }

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { BsThreeDotsVertical } from "react-icons/Bs"
 import { auth, db } from "../utils/firebase"
-import EditModal from "./editModal"
+import EditModal from "./edit-modal"
 
 export default function Message({ timestamp, user, profile, username, tweet, id }) {
 
@@ -44,7 +44,7 @@ export default function Message({ timestamp, user, profile, username, tweet, id 
 
   return (
     <div className="my-4 p-4 text-white rounded-tr-lg rounded-bl-lg border border-[#BBE1FA] bg-gradient-to-r from-[#131A1F] to-[#182227]">
-      <div className="flex items-center gap-2 place-content-between">
+      <div className="flex items-center gap-1 place-content-between">
         <div className="flex items-center gap-2">
           <img
             className="w-6 rounded-full"
