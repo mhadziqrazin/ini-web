@@ -1,9 +1,10 @@
 import { useState } from "react"
-import { auth, db } from "../utils/firebase"
+import { auth } from "../utils/firebase"
 import { useAuthState } from "react-firebase-hooks/auth"
 
 export default function User({ photoURL, uid, displayName, addFriend, removeFriend, friendsOf }) {
   const [currUser, loadingUser] = useAuthState(auth)
+
   if (loadingUser) return
   const isFriend = friendsOf.some(e => {
     if (e == currUser.uid) {
@@ -38,7 +39,6 @@ export default function User({ photoURL, uid, displayName, addFriend, removeFrie
             {displayName}
           </p>
         </div>
-
         <div>
           <input
             type="checkbox"
@@ -47,7 +47,6 @@ export default function User({ photoURL, uid, displayName, addFriend, removeFrie
           />
         </div>
       </div>
-
     </div>
   )
 }

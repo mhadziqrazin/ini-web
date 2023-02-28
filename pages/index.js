@@ -1,11 +1,6 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import { db, auth } from "../utils/firebase"
-import { useAuthState } from "react-firebase-hooks/auth"
-import { useEffect, useState } from 'react'
 import Post from './post'
-import Message from '../components/message'
-import { addDoc, collection, onSnapshot, orderBy, query, serverTimestamp } from 'firebase/firestore'
 
 const inter = Inter({ subsets: ['latin'] })
 

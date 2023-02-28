@@ -1,7 +1,7 @@
 import { deleteDoc, doc } from "firebase/firestore"
 import { useEffect, useRef, useState } from "react"
 import { useAuthState } from "react-firebase-hooks/auth"
-import { BsThreeDotsVertical } from "react-icons/Bs"
+import { BsThreeDotsVertical } from "react-icons/bs"
 import { auth, db } from "../utils/firebase"
 import EditModal from "./edit-modal"
 import ProfileModal from "./profile-modal"
@@ -13,7 +13,6 @@ export default function Message({ timestamp, user, profile, username, tweet, clo
   const [loading, setLoading] = useState(false)
   const [edit, setEdit] = useState(false)
   const [view, setView] = useState(false)
-
   const optionRef = useRef(null)
 
   useEffect(() => {

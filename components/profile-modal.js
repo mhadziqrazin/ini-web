@@ -1,10 +1,11 @@
 import { doc, getDoc } from "firebase/firestore"
 import { useEffect, useState } from "react"
 import { useAuthState } from "react-firebase-hooks/auth"
-import { TbArrowsDiagonalMinimize } from "react-icons/Tb"
+import { TbArrowsDiagonalMinimize } from "react-icons/tb"
 import { auth, db } from "../utils/firebase"
 
 export default function ProfileModal({ visible, onClose, username, profile, id }) {
+  
   if (!visible) return
 
   const [user, loading] = useAuthState(auth)
@@ -20,8 +21,6 @@ export default function ProfileModal({ visible, onClose, username, profile, id }
   useEffect(() => {
     getData()
   }, [user, loading])
-
-
 
   return (
     <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center">

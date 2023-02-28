@@ -1,13 +1,15 @@
 import { doc, updateDoc } from "firebase/firestore"
 import { useState } from "react"
-import { FiSave } from "react-icons/Fi"
+import { FiSave } from "react-icons/fi"
 import { toast } from "react-toastify"
 import { db } from "../utils/firebase"
-import { ImCancelCircle } from "react-icons/Im"
+import { ImCancelCircle } from "react-icons/im"
 
 
 export default function EditProfile({ visible, onClose, displayName, bio, id, getData }) {
+  
   if (!visible) return
+
   const [info, setInfo] = useState({ displayName: displayName, bio: bio })
   const [loading, setLoading] = useState(false)
 
@@ -82,7 +84,6 @@ export default function EditProfile({ visible, onClose, displayName, bio, id, ge
           </div>
         </form>
       </div>
-
     </div>
   )
 }

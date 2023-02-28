@@ -1,7 +1,7 @@
 import { auth, db } from "../utils/firebase"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { useEffect, useState } from "react"
-import { addDoc, collection, doc, updateDoc, FieldValue, onSnapshot, orderBy, query, serverTimestamp, setDoc, arrayUnion, arrayRemove } from "firebase/firestore"
+import { collection, doc, updateDoc, onSnapshot, query, arrayUnion, arrayRemove } from "firebase/firestore"
 import User from "../components/user"
 import { useRouter } from "next/router"
 
@@ -26,9 +26,7 @@ export default function CloseFriends() {
   // get all users
   const [allUsers, setAllUsers] = useState([])
 
-
   const getUsers = async () => {
-    
     if (loading) return
     const collectionRef = collection(db, 'users')
     const que = query(collectionRef)
@@ -57,7 +55,6 @@ export default function CloseFriends() {
       friendsOf: arrayRemove(friend)
     })
   }
-
 
   return (
     <div>

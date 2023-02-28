@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react"
-import { GrSend } from "react-icons/Gr"
-import { MdOutlineCancelScheduleSend } from "react-icons/Md"
-import { auth, db } from "../utils/firebase"
+import { useState } from "react"
+import { GrSend } from "react-icons/gr"
+import { MdOutlineCancelScheduleSend } from "react-icons/md"
+import { db } from "../utils/firebase"
 import { toast } from "react-toastify"
-import { addDoc, collection, doc, onSnapshot, orderBy, query, serverTimestamp, updateDoc } from "firebase/firestore"
+import { doc, updateDoc } from "firebase/firestore"
 
 
 export default function EditModal({ visible, onClose, tweet, id }) {
+  
   if (!visible) return null
 
   const [loading, setLoading] = useState(false)
@@ -71,7 +72,6 @@ export default function EditModal({ visible, onClose, tweet, id }) {
               <GrSend />{loading ? <>Editing thoughts..</> : <>Post</>}
             </button>
           </div>
-
         </form>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { SlSocialGoogle } from 'react-icons/Sl'
+import { SlSocialGoogle } from 'react-icons/sl'
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
 import { auth } from '../../utils/firebase'
 import { useRouter } from 'next/router'

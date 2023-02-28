@@ -2,11 +2,11 @@ import { auth, db } from "../utils/firebase"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import { addDoc, collection, doc, getDoc, onSnapshot, orderBy, query, serverTimestamp, where } from "firebase/firestore"
+import { collection, doc, getDoc, onSnapshot, orderBy, query, where } from "firebase/firestore"
 import Message from "../components/message"
-import { FiLogOut } from "react-icons/Fi"
-import { FaUserFriends } from "react-icons/Fa"
-import { IoMdSettings } from "react-icons/Io"
+import { FiLogOut } from "react-icons/fi"
+import { FaUserFriends } from "react-icons/fa"
+import { IoMdSettings } from "react-icons/io"
 import EditProfile from "../components/edit-profile"
 
 export default function Dashboard() {
@@ -95,15 +95,12 @@ export default function Dashboard() {
           <FiLogOut />
           Sign out
         </button>
-
       </div>
-
       <div>
         {posts.map((post) => (
           <Message key={post.id} {...post} />
         ))}
       </div>
-
     </div>
   )
 }
