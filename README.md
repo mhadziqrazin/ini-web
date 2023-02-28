@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 First, do `npm install` in the root folder
 
-Second, download the [.env.local](https://drive.google.com/file/d/1JtLJZNf2WTxXTxLkNi1gax9arOlrA62e/view?usp=share_link) for this project.
+Second, download the [.env.local](https://drive.google.com/file/d/1JtLJZNf2WTxXTxLkNi1gax9arOlrA62e/view?usp=share_link) for this project and place it in the root folder.
 
 then, run the development server:
 
@@ -18,4 +18,3 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Download the [.env.local](https://drive.google.com/file/d/1JtLJZNf2WTxXTxLkNi1gax9arOlrA62e/view?usp=share_link) for this project.
