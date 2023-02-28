@@ -6,8 +6,6 @@ import { GrSend } from "react-icons/Gr"
 import { addDoc, collection, doc, onSnapshot, orderBy, query, serverTimestamp, setDoc, updateDoc, getDoc, where } from "firebase/firestore"
 import { toast } from "react-toastify"
 import Message from "../components/message"
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
 
 
 export default function Post() {
@@ -120,10 +118,10 @@ export default function Post() {
       )}
       {user && (
         <>
-          <h1 className="text-xl italic font-medium">
+          <h1 className="text-lg italic font-medium">
             Welcome back,
           </h1>
-          <h1 className="text-4xl font-bold text-[#46A2E0]">
+          <h1 className="text-5xl font-bold text-[#46A2E0]">
             {userData.displayName}
           </h1>
           <form onSubmit={submitPost} className="my-4">

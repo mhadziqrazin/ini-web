@@ -52,7 +52,7 @@ export default function Dashboard() {
       {user && (
         <><div className="flex flex-col items-center gap-4 place-content-center">
           <img
-            className="w-20 rounded-full"
+            className="w-20 rounded-full border"
             src={userData.photoURL} />
           <p className="text-2xl font-medium">
             {userData.displayName}

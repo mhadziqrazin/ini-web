@@ -37,7 +37,7 @@ export default function Nav() {
           <Link href="/dashboard">
             <div className="flex items-center gap-2">
               <img
-                className="w-10 rounded-full"
+                className="w-10 rounded-full border"
                 src={userData.photoURL}
               />
               <p className="text-xs ">

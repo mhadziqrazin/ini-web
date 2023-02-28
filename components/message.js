@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth"
 import { BsThreeDotsVertical } from "react-icons/Bs"
 import { auth, db } from "../utils/firebase"
 import EditModal from "./edit-modal"
+import ProfileModal from "./profile-modal"
 
 export default function Message({ timestamp, user, profile, username, tweet, closed, edited, id }) {
 
@@ -11,6 +12,7 @@ export default function Message({ timestamp, user, profile, username, tweet, clo
   const [currUser] = useAuthState(auth)
   const [loading, setLoading] = useState(false)
   const [edit, setEdit] = useState(false)
+  const [view, setView] = useState(false)
 
   const optionRef = useRef(null)
 
@@ -41,17 +43,27 @@ export default function Message({ timestamp, user, profile, username, tweet, clo
     setEdit(!edit)
   }
 
+  const handleOnCloseProfile = () => {
+    setView(!view)
+  }
+
   return (
     <div className={`my-4 p-4 text-white rounded-tr-lg rounded-bl-lg border border-[#BBE1FA] ${closed ? 'border-green-400' : ''} bg-gradient-to-r from-[#131A1F] to-[#182227]`}>
       <div className="flex items-center gap-1 place-content-between">
         <div className="flex items-center gap-2">
-          <img
-            className="w-6 rounded-full"
-            src={profile}
-          />
-          <p className="text-xs font-medium">
-            {username}
-          </p>
+          <div
+            onClick={handleOnCloseProfile}
+            className="flex items-center gap-2 cursor-pointer"
+          >
+            <img
+              className="w-6 rounded-full border"
+              src={profile}
+            />
+            <p className="text-xs font-medium hover:text-[#46A2E0]">
+              {username}
+            </p>
+          </div>
+
           {timestamp &&
             <div className="text-xs text-gray-400 font-medium">
               <p>{new Date(timestamp.seconds * 1000).toLocaleDateString("en-GB")}</p>
@@ -101,10 +113,7 @@ export default function Message({ timestamp, user, profile, username, tweet, clo
           Edited
         </p>
       }
-
-
-
-
+      <ProfileModal id={user} visible={view} onClose={handleOnCloseProfile} username={username} profile={profile}/>
     </div>
   )
 }
