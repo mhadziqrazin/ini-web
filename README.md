@@ -18,3 +18,12 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+What i've installed during this project development:
+1. npm install -D tailwindcss postcss autoprefixer
+2. npx tailwindcss init -p
+3. npm i react-icons
+4. npm install firebase
+5. npm i react-firebase-hooks
+6. npm install -g firebase-tools
+7. npm i firebase-functions
+8. npm i react-toastify
