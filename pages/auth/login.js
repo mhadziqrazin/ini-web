@@ -35,7 +35,7 @@ export default function Login() {
         Join the Hype Now!
       </h2>
       <div className="py-4">
-        <button onClick={GoogleLogin} className="bg-[#0F4C75] w-full p-4 font-medium items-center flex rounded-lg gap-2">
+        <button onClick={GoogleLogin} className="bg-[#0F4C75] w-full p-4 font-medium items-center flex rounded-lg gap-2 hover:bg-[#166FAB]">
           <SlSocialGoogle className="text-3xl" />
           Sign in with your Google account
         </button>

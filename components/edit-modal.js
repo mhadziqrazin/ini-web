@@ -37,7 +37,7 @@ export default function EditModal({ visible, onClose, tweet, id }) {
 
     // make a new post
     const docRef = doc(db, 'posts', id)
-    const updatedDoc = { ...post, timestamp: serverTimestamp() }
+    const updatedDoc = { ...post, edited: true }
     await updateDoc(docRef, updatedDoc)
     setLoading(false)
     onClose()
@@ -45,7 +45,7 @@ export default function EditModal({ visible, onClose, tweet, id }) {
 
   return (
     <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center">
-      <div className="bg-[#1B262C] px-5 py-2 rounded-lg drop-shadow-lg backdrop-blur-sm bg-opacity-60">
+      <div className="bg-[#1B262C] px-5 py-2 rounded-lg drop-shadow-lg backdrop-blur-sm bg-opacity-60 border border-[#BBE1FA]/40">
         <form onSubmit={submitPost} className="my-4">
           <textarea
             value={post.tweet}
@@ -59,14 +59,14 @@ export default function EditModal({ visible, onClose, tweet, id }) {
           <div className="flex gap-4">
             <button
               onClick={onClose}
-              className="flex gap-2 place-content-center items-center p-2 w-full bg-red-300 text-[#1B262C] font-medium rounded-lg mt-2 text-sm text-[#1B262C] hover:bg-red-200"
+              className="flex gap-1 place-content-center items-center p-2 w-full bg-red-300 text-[#1B262C] font-medium rounded-lg mt-2 text-sm text-[#1B262C] hover:bg-red-400"
             >
               <MdOutlineCancelScheduleSend />
               Cancel
             </button>
             <button
               type="submit"
-              className="flex gap-2 place-content-center items-center p-2 w-full bg-[#BBE1FA] text-[#1B262C] font-medium rounded-lg mt-2 text-sm text-[#1B262C] hover:bg-[#ddf0fd]"
+              className="flex gap-1 place-content-center items-center p-2 w-full bg-[#BBE1FA] text-[#1B262C] font-medium rounded-lg mt-2 text-sm text-[#1B262C] hover:bg-[#60C1FF]"
             >
               <GrSend />{loading ? <>Editing thoughts..</> : <>Post</>}
             </button>

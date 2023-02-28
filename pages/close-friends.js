@@ -12,7 +12,7 @@ export default function CloseFriends() {
   // close-friends page accessibility
   const getUserData = async () => {
     if (loading) {
-      return;
+      return
     }
     if (!currUser) {
       return route.push("/auth/login");
@@ -37,9 +37,10 @@ export default function CloseFriends() {
     })
     return unsub
   }
+  
   useEffect(() => {
     getUsers()
-  }, [])
+  }, [currUser, loading])
 
   // const [friends, setFriends] = useState([])
 

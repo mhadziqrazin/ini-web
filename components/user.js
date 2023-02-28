@@ -2,7 +2,7 @@ import { useState } from "react"
 import { auth, db } from "../utils/firebase"
 import { useAuthState } from "react-firebase-hooks/auth"
 
-export default function User({ profile, user, username, addFriend, removeFriend, friendsOf }) {
+export default function User({ photoURL, uid, displayName, addFriend, removeFriend, friendsOf }) {
   const [currUser, loadingUser] = useAuthState(auth)
   if (loadingUser) return
   const isFriend = friendsOf.some(e => {
@@ -17,10 +17,10 @@ export default function User({ profile, user, username, addFriend, removeFriend,
   const handleChange = () => {
     if (!checked) {
       console.log("Close friend added")
-      addFriend(currUser.uid, user)
+      addFriend(currUser.uid, uid)
     } else {
       console.log("Close friend removed")
-      removeFriend(currUser.uid, user)
+      removeFriend(currUser.uid, uid)
     }
     setChecked(!checked)
 
@@ -32,10 +32,10 @@ export default function User({ profile, user, username, addFriend, removeFriend,
         <div className="flex items-center gap-2">
           <img
             className="w-6 rounded-full"
-            src={profile}
+            src={photoURL}
           />
           <p className="text-xs font-medium">
-            {username}
+            {displayName}
           </p>
           <div>
             <input
