@@ -3,11 +3,10 @@ import { useEffect, useRef, useState } from "react"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { BsThreeDotsVertical } from "react-icons/Bs"
 import { auth, db } from "../utils/firebase"
-import EditModal from "./editModal"
+import EditModal from "./edit-modal"
 
-export default function Message({ timestamp, user, profile, username, tweet, id }) {
+export default function Message({ timestamp, user, profile, username, tweet, closed, edited, id }) {
 
-  const options = ["edit", "hapus"]
   const [open, setOpen] = useState(false)
   const [currUser] = useAuthState(auth)
   const [loading, setLoading] = useState(false)
@@ -43,8 +42,8 @@ export default function Message({ timestamp, user, profile, username, tweet, id 
   }
 
   return (
-    <div className="my-4 p-4 text-white rounded-tr-lg rounded-bl-lg border border-[#BBE1FA] bg-gradient-to-r from-[#131A1F] to-[#182227]">
-      <div className="flex items-center gap-2 place-content-between">
+    <div className={`my-4 p-4 text-white rounded-tr-lg rounded-bl-lg border border-[#BBE1FA] ${closed ? 'border-green-400' : ''} bg-gradient-to-r from-[#131A1F] to-[#182227]`}>
+      <div className="flex items-center gap-1 place-content-between">
         <div className="flex items-center gap-2">
           <img
             className="w-6 rounded-full"
@@ -79,7 +78,6 @@ export default function Message({ timestamp, user, profile, username, tweet, id 
                   >
                     Edit
                   </button>
-                  <EditModal onClose={handleOnCloseEdit} visible={edit} tweet={tweet} id={id} />
                 </div>
                 <div>
                   <button
@@ -97,6 +95,13 @@ export default function Message({ timestamp, user, profile, username, tweet, id 
       <div className={`mt-5 text-lg  ${loading ? 'text-red-300' : ''}`}>
         <p>{loading ? <>Deleting thoughts..</> : tweet}</p>
       </div>
+      <EditModal onClose={handleOnCloseEdit} visible={edit} tweet={tweet} id={id} />
+      {edited &&
+        <p className="text-xs text-gray-400 mt-4">
+          Edited
+        </p>
+      }
+
 
 
 
