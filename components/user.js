@@ -28,22 +28,23 @@ export default function User({ photoURL, uid, displayName, addFriend, removeFrie
 
   return (
     <div className="my-4 p-4 text-white rounded-tr-lg rounded-bl-lg border border-[#BBE1FA] bg-gradient-to-r from-[#131A1F] to-[#182227]">
-      <div className="flex items-center gap-1 place-content-between">
+      <div className="flex items-center gap-2 place-content-between">
         <div className="flex items-center gap-2">
           <img
-            className="w-6 rounded-full"
+            className="w-10 rounded-full border"
             src={photoURL}
           />
-          <p className="text-xs font-medium">
+          <p className="text--2xl font-medium">
             {displayName}
           </p>
-          <div>
-            <input
-              type="checkbox"
-              checked={checked}
-              onChange={handleChange}
-            />
-          </div>
+        </div>
+
+        <div>
+          <input
+            type="checkbox"
+            checked={checked}
+            onChange={handleChange}
+          />
         </div>
       </div>
 

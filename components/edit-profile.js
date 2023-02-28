@@ -26,7 +26,7 @@ export default function EditProfile({ visible, onClose, displayName, bio, id, ge
     }
 
     if (info.displayName.length > 20 || info.bio.length > 100) {
-      toast.error("you've exceeded input limit!", {
+      toast.error("you've exceeded input limit! Username under 20 & Bio under 100", {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 2000,
       })
