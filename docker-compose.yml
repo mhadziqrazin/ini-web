@@ -6,7 +6,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./components:/usr/src/app/components
       - ./pages:/usr/src/app/pages
       - ./public:/usr/src/app/public
       - ./styles:/usr/src/app/styles
+      - ./components:/usr/src/app/components
