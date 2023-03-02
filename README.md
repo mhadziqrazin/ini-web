@@ -1,3 +1,6 @@
+
+[Deployed app](https://hadziq-ristek-webdev-2023.vercel.app): https://hadziq-ristek-webdev-2023.vercel.app
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -27,3 +30,7 @@ What i've installed during this project development:
 6. npm install -g firebase-tools
 7. npm i firebase-functions
 8. npm i react-toastify
+
+Main page:
+<img width="1367" alt="Screenshot 2023-03-01 at 00 56 36" src="https://user-images.githubusercontent.com/88391977/221939611-fcae2357-97a2-4387-8a80-7d5c9a09d0c6.png">
+
