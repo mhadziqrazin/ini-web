@@ -66,14 +66,14 @@ export default function Dashboard() {
       <div className="flex gap-2">
         <button
           onClick={() => route.push("/close-friends")}
-          className="bg-[#3282B8] w-full px-1 py-2 flex items-center gap-1 rounded-lg text-sm hover:bg-[#235b81] place-content-center font-medium"
+          className="bg-[#3282B8] w-full px-1 py-2 flex items-center gap-1 rounded-lg text-sm hover:bg-[#235b81] place-content-center font-medium transition-all duration-200"
         >
           <FaUserFriends />
           Close friends
         </button>
         <button
           onClick={() => setEdit(!edit)}
-          className="bg-gray-500 w-full px-2 py-1 flex items-center gap-1 rounded-lg text-sm hover:bg-gray-600 place-content-center font-medium"
+          className="bg-gray-500 w-full px-2 py-1 flex items-center gap-1 rounded-lg text-sm hover:bg-gray-600 place-content-center font-medium transition-all duration-200"
         >
           <IoMdSettings />
           Profile
@@ -90,7 +90,7 @@ export default function Dashboard() {
 
         <button
           onClick={() => auth.signOut()}
-          className="bg-red-500 w-full px-2 py-1 flex items-center gap-1 rounded-lg text-sm hover:bg-red-600 place-content-center font-medium"
+          className="bg-red-500 w-full px-2 py-1 flex items-center gap-1 rounded-lg text-sm hover:bg-red-600 place-content-center font-medium transition-all duration-200"
         >
           <FiLogOut />
           Sign out

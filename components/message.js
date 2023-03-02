@@ -58,7 +58,7 @@ export default function Message({ timestamp, user, profile, username, tweet, clo
               className="w-6 rounded-full border"
               src={profile}
             />
-            <p className="text-xs font-medium hover:text-[#46A2E0]">
+            <p className="text-xs font-medium hover:text-[#46A2E0] transition-all duration-200">
               {username}
             </p>
           </div>

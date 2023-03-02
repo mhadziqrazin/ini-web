@@ -145,7 +145,7 @@ export default function Post() {
             </div>
             <button
               type="submit"
-              className="flex gap-1 place-content-center items-center p-2 w-full bg-[#BBE1FA] text-[#1B262C] font-medium rounded-lg my-2 text-sm text-[#1B262C] hover:bg-[#60C1FF]"
+              className="flex gap-1 place-content-center items-center p-2 w-full bg-[#BBE1FA] text-[#1B262C] font-medium rounded-lg my-2 text-sm text-[#1B262C] hover:bg-[#60C1FF] transition-all duration-200"
             >
               <GrSend />{loading ? <>Uploading thoughts..</> : <>Post</>}
             </button>

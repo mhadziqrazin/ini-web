@@ -69,14 +69,14 @@ export default function EditProfile({ visible, onClose, displayName, bio, id, ge
           <div className="flex gap-4">
             <button
               onClick={onClose}
-              className="flex gap-1 place-content-center items-center p-2 w-full bg-red-300 text-[#1B262C] font-medium rounded-lg mt-2 text-sm text-[#1B262C] hover:bg-red-400"
+              className="flex gap-1 place-content-center items-center p-2 w-full bg-red-300 text-[#1B262C] font-medium rounded-lg mt-2 text-sm text-[#1B262C] hover:bg-red-400 transition-all duration-200"
             >
               <ImCancelCircle />
               Cancel
             </button>
             <button
               type="submit"
-              className="flex gap-1 place-content-center items-center p-2 w-full bg-[#BBE1FA] text-[#1B262C] font-medium rounded-lg mt-2 text-sm text-[#1B262C] hover:bg-[#60C1FF]"
+              className="flex gap-1 place-content-center items-center p-2 w-full bg-[#BBE1FA] text-[#1B262C] font-medium rounded-lg mt-2 text-sm text-[#1B262C] hover:bg-[#60C1FF] transition-all duration-200"
             >
               <FiSave />{loading ? <>Saving profile..</> : <>Save</>}
 
